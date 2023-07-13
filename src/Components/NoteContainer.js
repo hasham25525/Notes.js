@@ -7,7 +7,7 @@ const NoteContainer = () => {
     return (
 
         <div className='noteContainer'>
-            <h1 className="text-center">Notes</h1>
+            <h1 className=" mb-5">Notes</h1>
             <div className='noteContainer_notes custom-scroll '>
                 <Note note={
                     {
@@ -29,7 +29,7 @@ const NoteContainer = () => {
                     {
                         text: 'hellow',
                         time: '12:30PM',
-                        color: 'lightblue'
+                        color: 'white'
 
                     }
                 } />
