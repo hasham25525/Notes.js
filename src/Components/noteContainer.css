@@ -1,8 +1,14 @@
-.App{
-    height: 100vh;
+.noteContainer {
+    height: 100%;
+}
+
+.noteContainer_notes {
+   
+    height: 90%;
     display: flex;
-    gap: 20;
-    padding: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: scroll;
 }
 
 .custom-scroll::-webkit-scrollbar {
