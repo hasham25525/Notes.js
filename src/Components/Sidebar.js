@@ -3,7 +3,7 @@ import { PlusCircle } from 'lucide-react';
 import './sidebar.css'
 
 function Sidebar(props) {
-  const colors = ["white","lightsalmon", "lightblue", "lightpink", "lightgreen"];
+  const colors = ["white","lightsalmon", "lightblue", "lightpink", "#c0f3d9"];
   const [listOpen, setListOpen] = useState(false);
   return (
     <div className="sidebar">
