@@ -30,7 +30,7 @@
     border: none;
 }
 
-@media (max-width :523px) {
+@media (max-width :596px) {
     .note{
         width: 98%;
     }
