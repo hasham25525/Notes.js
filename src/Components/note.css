@@ -9,15 +9,15 @@
     background-color: rgb(254, 176, 145);
     border-radius: 10px;
     border: 1px solid rgb(230, 230, 230);
-    box-shadow: 0px 0px 14px rgb(228, 228, 228);
-    transition: all ease-in .1s;
+    /* box-shadow: 0px 0px 14px rgb(228, 228, 228); */
+    transition: all ease-out .2s;
 
 
 }
 .note:hover{
     transform: scale(102%);
     transition: all ease-in .1s;
-    box-shadow: 0px 0px 14px rgb(203, 203, 203);
+    /* box-shadow: 0px 0px 14px rgb(203, 203, 203); */
 
 }
 .note_text{

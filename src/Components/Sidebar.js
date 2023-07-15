@@ -3,19 +3,19 @@ import { PlusCircle } from 'lucide-react';
 import './sidebar.css'
 
 function Sidebar(props) {
-  const colors = ["#fe9b72", "#fec971", "#00d4fe", "#b693fd", "#e4ee91"];
+  const colors = ["white","lightsalmon", "lightblue", "lightpink", "lightgreen"];
   const [listOpen, setListOpen] = useState(false);
   return (
     <div className="sidebar">
       <div onClick={() => setListOpen(!listOpen)} className="sidebar_add">
-        <PlusCircle />
+        <PlusCircle className='w-10 h-10' />
       </div>
       <ul className={`sidebar_list pr-10 ${listOpen ? "sidebar_list_active" : ""}`}>
         {colors.map((item, index) => (
           <li
             key={index}
             style={{ backgroundColor: item }}
-            className="sidebar_list_item"
+            className="sidebar_list_item w-10 h-10 shadow-lg hover:shadow-xl"
             onClick={() => props.addNote(item)}
           />
         ))}

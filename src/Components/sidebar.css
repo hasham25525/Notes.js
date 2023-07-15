@@ -1,7 +1,8 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    
 }
 
 .sidebar img {
@@ -21,11 +22,21 @@
 
 .sidebar_list_active{
     height: 300px;
+
+    .sidebar_list_item{
+        border: 1px solid lightgray;
+    }
+    
 }
 
 .sidebar_list_item {
+    
     border-radius: 50%;
-    height: 26px;
-    width: 26px;
-    list-style: none
+    list-style: none;
+    transition: all ease .1s;
+
+}
+.sidebar_list_item:hover{
+    transition: all ease .1s;
+    transform: scale(105%);
 }
