@@ -6,28 +6,14 @@ import Sidebar from './Components/Sidebar';
 
 function App() {
 
-  const [notes, setNotes] = useState([
-    {
-      text:'hello',
-      time:"3:00PM",
-      color:'white'
-    },
-    {
-      text:'hello',
-      time:"3:00PM",
-      color:'lightpink'
-    },
-    {
-      text:'hello',
-      time:"3:00PM",
-      color:'lightblue'
-    }
-  ])
+  const [notes, setNotes] = useState([])
 
-  const addNote=(color)=>{
-    const newNotes=[...notes];
+  const addNote = (color) => {
+    const newNotes = [...notes];
+    
     newNotes.push({
-      text:'',
+      id: Date.now() + '' + Math.floor(Math.random() * 78),
+      text: '',
       time: Date.now(),
       color,
     })
@@ -36,8 +22,8 @@ function App() {
 
   return (
     <div className='App'>
-    <Sidebar addNote={addNote}/>
-   <NoteContainer notes={notes}/>
+      <Sidebar addNote={addNote} />
+      <NoteContainer notes={notes} />
     </div>
   );
 }
