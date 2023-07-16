@@ -6,7 +6,7 @@ function Sidebar(props) {
   const colors = ["white", "lightsalmon", "lightblue", "lightpink", "#c0f3d9"];
   const [listOpen, setListOpen] = useState(false);
   return (
-    <div className="sidebar">
+    <div className="sidebar dark:text-white">
       <div onClick={() => setListOpen(!listOpen)} className="sidebar_add">
         <PlusCircle className='w-10 h-10' />
       </div>

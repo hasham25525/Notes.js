@@ -2,6 +2,7 @@ import React from 'react'
 import Note from './Note'
 
 import './noteContainer.css'
+import Header from './Header';
 
 const NoteContainer = (props) => {
 
@@ -17,13 +18,13 @@ const NoteContainer = (props) => {
         return (
 
         <div className='noteContainer'>
-            <h1 className="text-2xl font-semibold  h-10 mb-5">Notes</h1>
+           
             <div className='noteContainer_notes custom-scroll p-2'>
 
                 {notes.length>0 ?(notes.map((item) => (
                     <Note key={item.id} note={item} delNote={props.delNote}/>
                 ))):(
-                    <h1 className="text-2xl font-semibold  h-10 mb-5">Please Create a Note using Pluse icon</h1>
+                    <h1 className="text-2xl font-semibold  h-10 mb-5 dark:text-white">Please Create a Note using Pluse icon</h1>
                 )}
             </div>
         </div>
