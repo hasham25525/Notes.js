@@ -35,3 +35,15 @@
         width: 98%;
     }
 }
+
+.trash{
+    opacity: 0;
+    transition: all ease .2s;
+}
+.note:hover .trash{
+    opacity: 100%;
+    cursor: pointer;
+    transition: all ease .2s;
+
+
+}

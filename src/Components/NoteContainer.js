@@ -5,25 +5,26 @@ import './noteContainer.css'
 
 const NoteContainer = (props) => {
 
-    const revArray = (arr) => {
-        const array = []
-        for (let i = arr.lenght - 1; i >= 0; --i) {
-            array.push(arr[i]);
-
+    const reverArray = (arr) => {
+        const array = [];
+        for (let i = arr.length - 1; i >= 0; --i) {
+        array.push(arr[i]);
         }
         return array;
-    };
+        };
+        const notes = reverArray(props.notes);
 
-    const notess= revArray(props.notes);
         return (
 
         <div className='noteContainer'>
             <h1 className="text-2xl font-semibold  h-10 mb-5">Notes</h1>
             <div className='noteContainer_notes custom-scroll p-2'>
 
-                {props.notes.map((item) => (
-                    <Note key={item.id} note={item} />
-                ))}
+                {notes.length>0 ?(notes.map((item) => (
+                    <Note key={item.id} note={item} delNote={props.delNote}/>
+                ))):(
+                    <h1 className="text-2xl font-semibold  h-10 mb-5">Please Create a Note using Pluse icon</h1>
+                )}
             </div>
         </div>
     )
