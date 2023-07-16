@@ -1,7 +1,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
     
 }
 
@@ -22,13 +22,21 @@
 
 .sidebar_list_active{
     height: 300px;
-
    
-    
+}
+.icon{
+    transition: all ease .2s;
+
+}
+
+.sidebar_list_active .icon{
+    transform: rotate(45deg);
+    transition: all ease .2s;
 }
 
 .sidebar_list_active .sidebar_list_item{
     border: 1px solid lightgray;
+    
 }
 .sidebar_list_item {
     

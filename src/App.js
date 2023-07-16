@@ -7,7 +7,9 @@ import Header from './Components/Header';
 
 function App() {
 
-  const [notes, setNotes] = useState([]);
+  const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  let currentTime = date;
+
 
   const [theme, setTheme] = useState("light");
   useEffect(() => {
@@ -21,12 +23,14 @@ function App() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+
+  const [notes, setNotes] = useState([]);
   const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       text: "",
-      time: Date.now(),
+      time: currentTime,
       color,
     });
     setNotes(tempNotes);
@@ -46,7 +50,7 @@ function App() {
     <div className=' dark:bg-zinc-800  '>
 
       <Header handleThemeSwitch={handleThemeSwitch} />
-      <div className='app-body'>
+      <div className='app-body px-8 pt-10 lg:px-10'>
 
         <Sidebar addNote={addNote} />
         <NoteContainer notes={notes} delNote={delNote} />
