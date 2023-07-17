@@ -12,9 +12,9 @@ function Sidebar(props) {
       <div onClick={() => {setListOpen(!listOpen)}} className="sidebar_add">
         <PlusCircle className='w-10 h-10 icon' />
       </div>
-        {colors.map((item) => (
+        {colors.map((item,index) => (
           <li
-            key={item.id}
+            key={index}
             style={{ backgroundColor: item }}
             className="sidebar_list_item w-8 h-10 shadow-lg hover:shadow-xl dark:border-none"
             onClick={() => props.addNote(item)}
