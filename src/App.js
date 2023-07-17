@@ -47,7 +47,7 @@ function App() {
 
   }
   return (
-    <div className=' dark:bg-zinc-800  '>
+    <div className=' dark:bg-zinc-800 main '>
 
       <Header handleThemeSwitch={handleThemeSwitch} />
       <div className='app-body px-8 pt-10 lg:px-10'>

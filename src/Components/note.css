@@ -1,3 +1,4 @@
+
 .note {
     padding: 25px;
     height: 40%;
@@ -26,10 +27,18 @@
     background-color: transparent;
     font-size: 1rem;
     line-height: 1.875rem;
-    outline: none;
     border: none;
    
 }
+.note_text:focus, .note_text:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
 
 @media (max-width :596px) {
     .note{
