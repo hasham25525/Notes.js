@@ -49,6 +49,12 @@ function App() {
     setNotes(tempNotes);
 
   }
+
+  const [noteText, setNoteText] = useState(notes.text)
+  const handleChange = (event) => {
+    setNoteText(event.target.value);
+  }
+
   return (
     <div className=' dark:bg-zinc-800 main dark:transition-all '>
 
