@@ -4,13 +4,14 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import Sidebar from './Components/Sidebar';
 import Header from './Components/Header';
+import { Key } from 'lucide-react';
 
 function App() {
 
   const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   let currentTime = date;
 
-  
+
 
   const [theme, setTheme] = useState("light");
   useEffect(() => {
@@ -26,15 +27,15 @@ function App() {
 
 
   const [notes, setNotes] = useState([]);
-  
-  const addNote = (color, text) => {
+
+  const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text,
+      text:noteText,
       time: currentTime,
-      
+
     });
     setNotes(tempNotes);
   };
@@ -50,9 +51,9 @@ function App() {
 
   }
 
-  const [noteText, setNoteText] = useState(notes.text)
+  const [noteText, setNoteText] = useState('')
   const handleChange = (event) => {
-    setNoteText(event.target.value);
+    setNoteText(event.target.value)
   }
 
   return (
@@ -61,11 +62,12 @@ function App() {
       <Header handleThemeSwitch={handleThemeSwitch} setSearchText={setSearchText} />
       <div className='app-body px-8 pt-10 lg:px-10'>
 
-        <Sidebar addNote={addNote} />
-      <NoteContainer notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
-      
-        setNotes={setNotes}
-         delNote={delNote} />
+        <Sidebar addNote={addNote} noteText={noteText} />
+        <NoteContainer notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
+          handleChange={handleChange}
+          noteText={noteText}
+          setNotes={setNotes}
+          delNote={delNote} />
       </div>
     </div>
   );
