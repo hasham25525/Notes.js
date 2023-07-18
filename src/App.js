@@ -10,6 +10,7 @@ function App() {
   const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   let currentTime = date;
 
+  
 
   const [theme, setTheme] = useState("light");
   useEffect(() => {
@@ -25,17 +26,19 @@ function App() {
 
 
   const [notes, setNotes] = useState([]);
-  const addNote = (color) => {
+  
+  const addNote = (color, text) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
-      text: "",
-      time: currentTime,
       color,
+      text,
+      time: currentTime,
+      
     });
     setNotes(tempNotes);
   };
-
+  const [searchText, setSearchText] = useState('')
   const delNote = (id) => {
     const tempNotes = [...notes]
 
@@ -47,13 +50,16 @@ function App() {
 
   }
   return (
-    <div className=' dark:bg-zinc-800 main '>
+    <div className=' dark:bg-zinc-800 main dark:transition-all '>
 
-      <Header handleThemeSwitch={handleThemeSwitch} />
+      <Header handleThemeSwitch={handleThemeSwitch} setSearchText={setSearchText} />
       <div className='app-body px-8 pt-10 lg:px-10'>
 
         <Sidebar addNote={addNote} />
-        <NoteContainer notes={notes} delNote={delNote} />
+      <NoteContainer notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
+      
+        setNotes={setNotes}
+         delNote={delNote} />
       </div>
     </div>
   );

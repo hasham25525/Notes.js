@@ -2,7 +2,7 @@ import React from 'react'
 import Note from './Note'
 
 import './noteContainer.css'
-import Header from './Header';
+
 
 const NoteContainer = (props) => {
 

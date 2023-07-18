@@ -2,14 +2,19 @@
     height: 100%;
     width: 100%;
 }
-
+/* 
 .noteContainer_notes {
-   /* padding: 10px; */
+   padding: 10px;
     height: 90%;
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     gap: 20px;
     overflow-y: scroll;
+} */
+.noteContainer_notes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 1rem;
 }
 
 .custom-scroll::-webkit-scrollbar {

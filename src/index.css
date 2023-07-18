@@ -26,3 +26,12 @@ code {
   background: #000;
   color: #fff;
 }
+
+.search:focus, .note_text:focus {
+
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
