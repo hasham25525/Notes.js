@@ -17,7 +17,7 @@ const NoteContainer = (props) => {
 
         return (
 
-        <div className='noteContainer'>
+        <div className='noteContainer '>
            
             <div className='noteContainer_notes custom-scroll p-2'>
 
