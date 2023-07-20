@@ -4,7 +4,7 @@ import './App.css';
 import NoteContainer from './Components/NoteContainer';
 import Sidebar from './Components/Sidebar';
 import Header from './Components/Header';
-import { Key } from 'lucide-react';
+
 
 function App() {
 
@@ -28,12 +28,12 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
-  const addNote = (color) => {
+  const addNote = (color, text) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text:noteText,
+      text,
       time: currentTime,
 
     });
@@ -51,9 +51,12 @@ function App() {
 
   }
 
+
   const [noteText, setNoteText] = useState('')
+
   const handleChange = (event) => {
     setNoteText(event.target.value)
+
   }
 
   return (
@@ -62,8 +65,12 @@ function App() {
       <Header handleThemeSwitch={handleThemeSwitch} setSearchText={setSearchText} />
       <div className='app-body px-8 pt-10 lg:px-10'>
 
-        <Sidebar addNote={addNote} noteText={noteText} />
-        <NoteContainer notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
+        <Sidebar
+          addNote={addNote}
+          noteText={noteText} />
+
+        <NoteContainer
+          notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
           handleChange={handleChange}
           noteText={noteText}
           setNotes={setNotes}
