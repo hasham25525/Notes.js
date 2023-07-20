@@ -29,7 +29,7 @@ const NoteContainer = (props) => {
                         handleChange={props.handleChange}
                         noteText={props.noteText} />
                 ))) : (
-                    <h1 className="text-2xl font-semibold  h-10 mb-5 dark:text-white">Please Create a Note using Pluse icon</h1>
+                    <h1 className="text-2xl font-semibold  h-10 mb-5 dark:text-white">Please Create a Note using Plus icon</h1>
                 )}
             </div>
         </div>
