@@ -37,7 +37,7 @@ function App() {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
-      color,
+      color, 
       text:noteText, 
       time: currentTime,
 
