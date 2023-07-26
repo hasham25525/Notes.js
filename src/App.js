@@ -39,7 +39,7 @@ function App() {
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color, 
       text:noteText, 
-      time: currentTime,
+      time: currentTime, 
 
     });
     setNotes(tempNotes);
