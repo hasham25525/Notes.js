@@ -25,8 +25,8 @@ function Sidebar(props) {
               style={{ backgroundColor: item }}
               className="sidebar_list_item w-8 h-10 shadow-lg hover:shadow-xl dark:border-none"
               onClick={() => { 
-               const text=props.noteText;
-                props.addNote(item, text) }}
+              
+                props.addNote(item) }}
             />
           ))}
       </ul>

@@ -28,12 +28,12 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
-  const addNote = (color, text) => {
+  const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text,
+      text:'',
       time: currentTime,
 
     });
