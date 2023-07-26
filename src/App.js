@@ -10,9 +10,15 @@ function App() {
 
   const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   let currentTime = date;
+  
+  
+ 
+  const [noteText, setNoteText] = useState('')
 
+  const handleChange = (event) => {
+    setNoteText(event.target.value)
 
-
+  }
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     if (theme === "dark") {
@@ -32,13 +38,13 @@ function App() {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
-      color,
-      text:noteText,
-      time: currentTime,
+      color,  
+      text:noteText, 
+      time: currentTime, 
 
     });
     setNotes(tempNotes);
-    text='';
+    setNoteText('');
   };
   const [searchText, setSearchText] = useState('')
   const delNote = (id) => {
@@ -52,13 +58,6 @@ function App() {
 
   }
 
-
-  const [noteText, setNoteText] = useState('')
-
-  const handleChange = (event) => {
-    setNoteText(event.target.value)
-
-  }
 
   return (
     <div className=' dark:bg-zinc-800 main dark:transition-all '>
