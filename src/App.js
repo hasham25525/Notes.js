@@ -38,7 +38,7 @@ function App() {
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text:noteText,
+      text:noteText, 
       time: currentTime,
 
     });
