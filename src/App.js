@@ -10,8 +10,13 @@ function App() {
 
   const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   let currentTime = date;
+  
+  const [noteText, setNoteText] = useState('')
 
+  const handleChange = (event) => {
+    setNoteText(event.target.value)
 
+  }
 
   const [theme, setTheme] = useState("light");
   useEffect(() => {
@@ -38,7 +43,7 @@ function App() {
 
     });
     setNotes(tempNotes);
-    text='';
+    setNoteText('');
   };
   const [searchText, setSearchText] = useState('')
   const delNote = (id) => {
@@ -52,13 +57,6 @@ function App() {
 
   }
 
-
-  const [noteText, setNoteText] = useState('')
-
-  const handleChange = (event) => {
-    setNoteText(event.target.value)
-
-  }
 
   return (
     <div className=' dark:bg-zinc-800 main dark:transition-all '>
