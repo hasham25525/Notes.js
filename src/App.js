@@ -33,11 +33,12 @@ function App() {
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text:'',
+      text:noteText,
       time: currentTime,
 
     });
     setNotes(tempNotes);
+    text='';
   };
   const [searchText, setSearchText] = useState('')
   const delNote = (id) => {
