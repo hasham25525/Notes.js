@@ -20,6 +20,7 @@ function App() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const [notes, setNotes] = useState([]);
 
   const [noteText, setNoteText] = useState('')
 
@@ -37,8 +38,6 @@ function App() {
   }
 
 
-  const [notes, setNotes] = useState([]);
-
   const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
@@ -49,7 +48,7 @@ function App() {
 
     });
     setNotes(tempNotes);
-    // setNoteText('');
+   
   };
 
 

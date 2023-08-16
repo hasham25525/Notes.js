@@ -27,7 +27,8 @@ const NoteContainer = (props) => {
                         note={item}
                         delNote={props.delNote}
                         handleChange={props.handleChange}
-                        noteText={props.noteText} />
+                        noteText={props.noteText}
+                         />
                 ))) : (
                     <h1 className="text-2xl font-semibold  h-10 mb-5 dark:text-white">Please Create a Note using Plus icon</h1>
                 )}
