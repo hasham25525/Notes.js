@@ -23,7 +23,8 @@ function Sidebar(props) {
             <li
               key={index}
               style={{ backgroundColor: item }}
-              className="sidebar_list_item w-8 h-10 shadow-lg hover:shadow-xl dark:border-none"
+              className="sidebar_list_item w-8 h-10 shadow-lg hover:shadow-xl dark:border-none 
+               "
               onClick={() => { 
               
                 props.addNote(item) }}

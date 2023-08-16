@@ -8,17 +8,6 @@ import Header from './Components/Header';
 
 function App() {
 
-  const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-  let currentTime = date;
-  
-  
- 
-  const [noteText, setNoteText] = useState('')
-
-  const handleChange = (event) => {
-    setNoteText(event.target.value)
-
-  }
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     if (theme === "dark") {
@@ -32,21 +21,39 @@ function App() {
   };
 
 
+  const [noteText, setNoteText] = useState('')
+
+  const [searchText, setSearchText] = useState('')
+
+
+  const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  let currentTime = date;
+
+
+
+  const handleChange = (event) => {
+    setNoteText(event.target.value)
+
+  }
+
+
   const [notes, setNotes] = useState([]);
 
   const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
-      color,  
-      text:noteText, 
-      time: currentTime, 
+      color,
+      text: '',
+      time: currentTime,
 
     });
     setNotes(tempNotes);
-    setNoteText('');
+    // setNoteText('');
   };
-  const [searchText, setSearchText] = useState('')
+
+
+
   const delNote = (id) => {
     const tempNotes = [...notes]
 
@@ -70,7 +77,7 @@ function App() {
           noteText={noteText} />
 
         <NoteContainer
-          notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
+          notes={notes.filter((note) => note.text.includes(searchText))}
           handleChange={handleChange}
           noteText={noteText}
           setNotes={setNotes}
