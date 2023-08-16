@@ -48,7 +48,7 @@ function App() {
 
     });
     setNotes(tempNotes);
-   
+
   };
 
 
@@ -73,7 +73,7 @@ function App() {
 
         <Sidebar
           addNote={addNote}
-          noteText={noteText} />
+        />
 
         <NoteContainer
           notes={notes.filter((note) => note.text.includes(searchText))}
