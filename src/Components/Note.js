@@ -6,7 +6,7 @@ const Note = (props) => {
 
   return (
     <div className='note shadow-lg hover:shadow-xl dark:border-none ' style={{ backgroundColor: props.note.color }}>
-      <textarea className='note_text rounded-md custom-scroll ' id='textarea' placeholder='Your Text Here!'
+      <textarea className='note_text rounded-md custom-scroll ' id={props.note.id} placeholder='Your Text Here!'
         onChange={props.handleChange}
         defaultValue={props.note.text}  />
       <footer className='footer flex justify-between items-center'>

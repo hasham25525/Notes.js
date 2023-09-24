@@ -1,10 +1,9 @@
 
 .main{
-    height: 100vh;
+    /* height: 100; */
 }
 
 .app-body{
-    height: 100vh;
     display: flex;
     gap: 20;
     

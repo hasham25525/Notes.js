@@ -15,6 +15,7 @@ const NoteContainer = (props) => {
     };
     const notes = reverArray(props.notes);
 
+     console.log('notes', props.notes )
     return (
 
         <div className='noteContainer '>

@@ -1,13 +1,10 @@
-
-import { useState, useEffect } from 'react';
-import './App.css';
-import NoteContainer from './Components/NoteContainer';
-import Sidebar from './Components/Sidebar';
-import Header from './Components/Header';
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import NoteContainer from "./Components/NoteContainer";
+import Sidebar from "./Components/Sidebar";
+import Header from "./Components/Header";
 
 function App() {
-
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     if (theme === "dark") {
@@ -22,65 +19,59 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
-  const [noteText, setNoteText] = useState('')
+  const [noteText, setNoteText] = useState("");
 
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState("");
 
-
-  const date = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  const date = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
   let currentTime = date;
 
-
-
   const handleChange = (event) => {
-    setNoteText(event.target.value)
+    setNoteText(event.target.value);
 
-  }
-
+  };
 
   const addNote = (color) => {
     const tempNotes = [...notes];
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text: '',
+      text: noteText,
       time: currentTime,
-
     });
     setNotes(tempNotes);
-
   };
 
-
-
   const delNote = (id) => {
-    const tempNotes = [...notes]
+    const tempNotes = [...notes];
 
-    const index = tempNotes.findIndex(item => item.id === id)
-    if (index < 0) return
+    const index = tempNotes.findIndex((item) => item.id === id);
+    if (index < 0) return;
 
     tempNotes.splice(index, 1);
     setNotes(tempNotes);
-
-  }
-
+  };
 
   return (
-    <div className=' dark:bg-zinc-800 main dark:transition-all '>
-
-      <Header handleThemeSwitch={handleThemeSwitch} setSearchText={setSearchText} />
-      <div className='app-body px-8 pt-10 lg:px-10'>
-
-        <Sidebar
-          addNote={addNote}
-        />
+    <div className=" dark:bg-zinc-800 main dark:transition-all ">
+      <Header
+        handleThemeSwitch={handleThemeSwitch}
+        setSearchText={setSearchText}
+      />
+      <div className="app-body px-8 pt-10 lg:px-10">
+        <Sidebar addNote={addNote} />
 
         <NoteContainer
           notes={notes.filter((note) => note.text.includes(searchText))}
           handleChange={handleChange}
           noteText={noteText}
           setNotes={setNotes}
-          delNote={delNote} />
+          delNote={delNote}
+        />
       </div>
     </div>
   );
