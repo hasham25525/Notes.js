@@ -58,7 +58,7 @@ function App() {
 
   return (
     <div className=" dark:bg-zinc-800 main dark:transition-all ">
-      <Header
+      <Header 
         handleThemeSwitch={handleThemeSwitch}
         setSearchText={setSearchText}
       />
