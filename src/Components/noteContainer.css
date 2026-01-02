@@ -12,9 +12,20 @@
     overflow-y: scroll;
 } */
 .noteContainer_notes{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    grid-gap: 1rem;
+    display: block;
+}
+
+.empty-state {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .custom-scroll::-webkit-scrollbar {

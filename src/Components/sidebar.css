@@ -16,21 +16,18 @@
     gap: 20px;
     align-items: center;
     
-    height: 0;
-    transition: 300ms;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease;
+    padding: 0;
+    margin: 0;
 }
 
 .sidebar_list_active{
-    height: 300px;
-   
+    max-height: 500px;
+    overflow: visible;
 }
 .icon{
-    transition: all ease .2s;
-
-}
-
-.sidebar_list_active .icon{
-    transform: rotate(45deg);
     transition: all ease .2s;
 }
 
@@ -42,13 +39,46 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .sidebar_list_item {
-    
     border-radius: 50%;
     list-style: none;
-    transition: all ease .1s;
-
+    transition: all ease 0.2s;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    display: block;
 }
+
+.sidebar_list_item::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar_list_item:hover::before {
+    opacity: 1;
+}
+
 .sidebar_list_item:hover{
-    transition: all ease .1s;
-    transform: scale(105%);
+    transform: scale(110%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar_add {
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar_add:hover {
+    transform: scale(1.1);
+}
+
+.icon.rotated {
+    transform: rotate(45deg);
 }
