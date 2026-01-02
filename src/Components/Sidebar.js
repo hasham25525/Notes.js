@@ -21,7 +21,7 @@ function Sidebar(props) {
 
   return (
     <div className="sidebar dark:text-white" >
-      <div onClick={() => { setListOpen(!listOpen) }} className="sidebar_add lg:pr-10">
+      <div onClick={() => { setListOpen(!listOpen) }} className="sidebar_add align-center ">
         <PlusCircle className={`w-10 h-10 icon ${listOpen ? 'rotated' : ''}`} />
       </div>
 

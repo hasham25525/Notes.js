@@ -8,7 +8,10 @@ const Header = ({ handleThemeSwitch, setSearchText, notesCount }) => {
         <div className='px-8 lg:px-10 pt-8'>
          <div className='flex justify-between items-center pb-5 border-b dark:border-neutral-600'>
          <div className='flex items-center gap-3'>
-            <h1 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:text-white">Notes <img src={underline} alt='' className='absolute top-12 left-3 lg:left-5 w-28 '/></h1>
+            <div className='relative inline-block'>
+                <h1 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:text-white">Notes</h1>
+                <img src={underline} alt='' className='absolute bottom-0 left-0 w-28' />
+            </div>
             {notesCount > 0 && (
                 <span className='text-sm text-gray-500 dark:text-gray-400 font-medium'>
                     {notesCount} {notesCount === 1 ? 'note' : 'notes'}

@@ -109,7 +109,7 @@ function App() {
   });
 
   return (
-    <div className=" dark:bg-zinc-800 main dark:transition-all ">
+    <div className="container mx-auto dark:bg-zinc-800 main dark:transition-all ">
       <Header 
         handleThemeSwitch={handleThemeSwitch}
         setSearchText={setSearchText}

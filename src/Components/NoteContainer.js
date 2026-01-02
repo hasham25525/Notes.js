@@ -19,7 +19,7 @@ const NoteContainer = (props) => {
                         {pinnedNotes.length > 0 && (
                             <div className='w-full mb-4'>
                                 <h2 className='text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 px-2'>Pinned Notes</h2>
-                                <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 mb-6'>
+                                <div className='notes-grid gap-4 mb-6'>
                                     {pinnedNotes.map((item) => (
                                         <Note
                                             key={item.id}
@@ -38,7 +38,7 @@ const NoteContainer = (props) => {
                                 {pinnedNotes.length > 0 && (
                                     <h2 className='text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 px-2'>All Notes</h2>
                                 )}
-                                <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
+                                <div className='notes-grid gap-4'>
                                     {unpinnedNotes.map((item) => (
                                         <Note
                                             key={item.id}

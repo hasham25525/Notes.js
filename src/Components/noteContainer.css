@@ -15,6 +15,29 @@
     display: block;
 }
 
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Limit columns on larger screens - max 4-5 columns */
+@media (min-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        max-width: calc(5 * 220px + 4 * 1rem);
+        margin: 0 auto;
+    }
+}
+
+/* On very large screens, limit to 5 columns max */
+@media (min-width: 1400px) {
+    .notes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        max-width: calc(5 * 240px + 4 * 1rem);
+    }
+}
+
 .empty-state {
     animation: fadeIn 0.5s ease-out;
 }
