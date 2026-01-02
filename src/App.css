@@ -4,7 +4,7 @@
 
 .app-body {
   display: flex;
-  gap: 20;
+  gap: 20px;
 }
 
 .custom-scroll::-webkit-scrollbar {

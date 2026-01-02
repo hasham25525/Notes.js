@@ -28,7 +28,15 @@
     font-size: 1rem;
     line-height: 1.875rem;
     border: none;
-   
+    color: #1f2937;
+}
+
+.note_text::placeholder {
+    color: rgba(31, 41, 55, 0.5);
+}
+
+.dark .note_text::placeholder {
+    color: rgba(31, 41, 55, 0.4);
 }
 
 

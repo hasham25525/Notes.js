@@ -11,7 +11,7 @@ const Header = ({ handleThemeSwitch, setSearchText }) => {
            
            <div className='flex gap-x-3 items-center'>
            <Search setSearchText={setSearchText} />           
-            <button className='px-2 py-2  shadow-lg  rounded-2xl'
+            <button className='px-2 py-2 shadow-lg rounded-2xl dark:bg-zinc-700 dark:hover:bg-zinc-600 transition-colors'
                 onClick={() => {
                     handleThemeSwitch()
                 }}> <Moon className='dark:hidden w-6 h-6' />

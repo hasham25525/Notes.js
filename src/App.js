@@ -23,16 +23,16 @@ function App() {
 
   const [searchText, setSearchText] = useState("");
 
-  const date = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
-  let currentTime = date;
+  const getCurrentTime = () => {
+    return new Date().toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+  };
 
   const handleChange = (event) => {
     setNoteText(event.target.value);
-
   };
 
   const addNote = (color) => {
@@ -40,9 +40,18 @@ function App() {
     tempNotes.push({
       id: Date.now() + "" + Math.floor(Math.random() * 78),
       color,
-      text: noteText,
-      time: currentTime,
+      text: noteText || "", // Allow empty notes that can be edited
+      time: getCurrentTime(),
     });
+    setNotes(tempNotes);
+    setNoteText(""); // Clear the text after adding
+  };
+
+  const updateNote = (id, newText) => {
+    const tempNotes = [...notes];
+    const index = tempNotes.findIndex((item) => item.id === id);
+    if (index < 0) return;
+    tempNotes[index].text = newText;
     setNotes(tempNotes);
   };
 
@@ -66,11 +75,9 @@ function App() {
         <Sidebar addNote={addNote} />
 
         <NoteContainer
-          notes={notes.filter((note) => note.text.includes(searchText))}
-          handleChange={handleChange}
-          noteText={noteText}
-          setNotes={setNotes}
+          notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLowerCase()))}
           delNote={delNote}
+          updateNote={updateNote}
         />
       </div>
     </div>

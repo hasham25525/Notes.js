@@ -26,8 +26,9 @@ function Sidebar(props) {
               className="sidebar_list_item w-8 h-10 shadow-lg hover:shadow-xl dark:border-none 
                "
               onClick={() => { 
-              
-                props.addNote(item) }}
+                props.addNote(item);
+                setListOpen(false); // Close the color list after selection
+              }}
             />
           ))}
       </ul>

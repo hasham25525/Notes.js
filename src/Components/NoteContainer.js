@@ -14,8 +14,6 @@ const NoteContainer = (props) => {
         return array;
     };
     const notes = reverArray(props.notes);
-
-     console.log('notes', props.notes )
     return (
 
         <div className='noteContainer '>
@@ -27,8 +25,7 @@ const NoteContainer = (props) => {
                         key={item.id}
                         note={item}
                         delNote={props.delNote}
-                        handleChange={props.handleChange}
-                        noteText={props.noteText}
+                        updateNote={props.updateNote}
                          />
                 ))) : (
                     <h1 className="text-2xl font-semibold  h-10 mb-5 dark:text-white">Please Create a Note using Plus icon</h1>
